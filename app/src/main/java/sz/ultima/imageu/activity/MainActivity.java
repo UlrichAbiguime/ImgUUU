@@ -1,9 +1,11 @@
 package sz.ultima.imageu.activity;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import sz.ultima.imageu.R;
 
@@ -36,5 +38,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void seePic(View view) {
+
+        Intent intent = new Intent(this, ShowPicActivity.class);
+        startActivity(intent);
     }
 }
