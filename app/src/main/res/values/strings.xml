@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ImageU</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_show_pic">ShowPicActivity</string>
+    <string name="pic_description">从服务器获取的图片</string>
+</resources>

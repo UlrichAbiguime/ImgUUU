@@ -1,0 +1,37 @@
+Une application toute simple...
+
+- ou les utilisateurs peuvent se aller regarder les recentes
+    photos des users...
+
+- regarder le contenu, les partagers sur les differents reseaux
+    sociaux, faire des commentaires qui seront gardees sur des
+    serveurs que j'aurai en local en chine ~
+
+- au debut il n'y aura pas de fonction commentaires, mais au fur
+ et a mesure il yen aura naturellement.
+
+
+=============
+
+Cote design, je peux essayer de faire des categories en top avec de
+    petites icones...
+
+- en dessous les recentes pictures...
+    appuyer sur see more nous permettrais d'aller de sauter vers
+    une application ou tu peux effectuer des recherches bcp plus
+    precises...
+   --- Le theme de l'application sera du vert / noir .
+
+
+- un menu ou tu peux trouver des images par le biais de recherches
+plus ou moins precises.
+
+
+---  en top, une view pour faire les recherches...
+--- volley request et caching functions pour les images...
+
+=== I WANT TO TAKE THEIR PICTURES...
+
+    - JUST LIKE, IF SOMEONE REQUEST THE PICTURE, IF IT IS IN MY
+    DATABASE, ILL JUST SEND IT TO HIM, IF NOT, ILL DOWNLOAD IT,
+    AND SEND IT TO HIM.... OTHERWISE ILL TELL HIM THAT I CANT.
