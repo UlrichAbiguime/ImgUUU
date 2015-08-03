@@ -16,6 +16,7 @@ public class ShowPicActivity extends Activity {
 
         // volley request to fetch the activity...
         // showing a progressbar from the start.
+
     }
 
     @Override
