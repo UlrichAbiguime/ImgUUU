@@ -7,6 +7,6 @@ import android.graphics.Bitmap;
  */
 public interface VolleyRequestOnResultListener {
 
-    public void onSucces (Bitmap bitmap);
+    public void onSucces (String result);
     public void onFailure (String error);
 }

@@ -1,22 +1,66 @@
 package sz.ultima.imageu.activity;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 
 import sz.ultima.imageu.R;
+import sz.ultima.imageu.on3.MyBoruto;
 
 public class ShowPicActivity extends Activity {
+
+
+    private static final String TAG = "ShowPicActivity";
+    ImageView iv_pic;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_pic);
-
+        initViews();
         // volley request to fetch the activity...
         // showing a progressbar from the start.
+        String url ="http://www.mpages.co.nz/MpageMeadia/News/uegaXM8NVUezhV_s72dwCA%E6%98%A5%E6%99%9Ab.jpeg";
 
+        // no need to upload such a big picture... ill just upload something shorter
+    /*    ImageRequest imageRequest = new ImageRequest(url, new Response.Listener<Bitmap>() {
+            @Override
+            public void onResponse(Bitmap bitmap) {
+                progressBar.setVisibility(View.GONE);
+                iv_pic.setImageBitmap(bitmap);
+                iv_pic.setVisibility(View.VISIBLE);
+            }
+        }, 0, 0, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                makeToast (volleyError.toString());
+                finish();
+            }
+        });
+        imageRequest.setTag(TAG);*/
+//        MyBoruto.getInstance(getApplicationContext()).addToRequestQueue(imageRequest);
+    MyBoruto.getInstance(getApplicationContext()).getImageLoader();
+    }
+
+    private void makeToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void initViews() {
+        iv_pic = (ImageView) findViewById(R.id.iv_pic);
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
     }
 
     @Override
@@ -41,11 +85,11 @@ public class ShowPicActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyBoruto.getInstance(getApplicationContext()).cancelAllRequest (TAG);
+    }
 
-
-// load pic function... that takes a link, and shows the pic of it.
-
-
-
-
+    // load pic function... that takes a link, and shows the pic of it.
 }
