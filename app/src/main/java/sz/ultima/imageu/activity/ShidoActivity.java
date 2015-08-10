@@ -1,13 +1,15 @@
 package sz.ultima.imageu.activity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -22,6 +24,7 @@ import sz.ultima.imageu.R;
 import sz.ultima.imageu.adapters.DrawerListAdapter;
 import sz.ultima.imageu.utils.CustomToast;
 import sz.ultima.imageu.utils.Utils;
+import sz.ultima.imageu.viewz.CircularImageView;
 import sz.ultima.imageu.viewz.OverListView;
 
 public class ShidoActivity extends FragmentActivity {
@@ -47,8 +50,10 @@ public class ShidoActivity extends FragmentActivity {
         setAdapters();
 //getSupportActionBar().hide();;
         mDrawer = MenuDrawer.attach(this);
+
         mDrawer.setContentView(R.layout.activity_shido);
         mDrawer.setMenuView(R.layout.activity_menu_view);
+       setUpPicImageSize (mDrawer.getMenuSize());
         mDrawer.setOnDrawerStateChangeListener(new MenuDrawer.OnDrawerStateChangeListener() {
             @Override
             public void onDrawerStateChange(int oldState, int newState) {
@@ -65,6 +70,20 @@ public class ShidoActivity extends FragmentActivity {
             }
         });
     }
+
+    private void setUpPicImageSize(int menuSize) {
+
+        // get the size of the menu
+        CircularImageView img = (CircularImageView) findViewById(R.id.circularone);
+        // get the width of the view.
+        CustomToast.mT(this, "menusize is " +menuSize);
+        ViewGroup.LayoutParams layoutParams = img.getLayoutParams();
+        layoutParams.width = menuSize/2;
+        layoutParams.height = menuSize/2;
+        img.setLayoutParams(layoutParams);
+    }
+
+
 
     private void setAdapters() {
     }
@@ -91,7 +110,6 @@ public class ShidoActivity extends FragmentActivity {
 
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_shido, menu);
@@ -115,12 +133,7 @@ public class ShidoActivity extends FragmentActivity {
         }
     }
 
-    /**
-     * 设置虚拟按钮为半透明状态
-     *
-     * @param activity activity
-     * @param colorId  颜色id
-     */
+
     public static void setNavigationBarColor(Activity activity, int colorId) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -141,13 +154,7 @@ public class ShidoActivity extends FragmentActivity {
     }
 
 
-    /**
-     * 给状态栏设置颜色,针对 4.4 , 5.0 在style文件中已经配置
-     * 提示:如果出现布局上移了,请确认你的activity 对应的xml根布局是否有配置 fillSystemWindow=true
-     *
-     * @param activity activity
-     * @param colorId  颜色id,请用 getResource.getColor(xxx) 传入
-     */
+
     public static void setStatusBarColor(Activity activity, int colorId) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -156,7 +163,5 @@ public class ShidoActivity extends FragmentActivity {
             manager.setStatusBarTintColor(colorId);
         }
     }
-
-
 
 }
