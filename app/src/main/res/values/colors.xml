@@ -6,4 +6,6 @@
     <color name="myred">#dd4966</color>
     <color name="darkgreen">#ff005a5c</color>
     <color name="status_bar_color">@color/darkgreen</color>
+    <color name="cool_white">#e8e8e8</color>
+    <color name="cooler_white">#adadae</color>
 </resources>

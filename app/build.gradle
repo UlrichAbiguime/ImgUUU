@@ -5,8 +5,8 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "sz.ultima.imageu"
-        minSdkVersion 9
+        applicationId "sz.ulrichabiguime.imageu"
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -25,4 +25,7 @@ dependencies {
     compile files('libs/Volley.jar')
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.4'
     compile 'net.simonvt.menudrawer:menudrawer:3.0.+@aar'
+    compile 'com.pkmmte.view:circularimageview:1.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.code.gson:gson:2.2.4'
 }

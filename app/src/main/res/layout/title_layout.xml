@@ -14,7 +14,7 @@
       	android:layout_centerVertical="true"
         android:src="@drawable/titleback_bg"
         android:scaleType="fitXY"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:contentDescription="@string/app_name"/>
 
 	<TextView

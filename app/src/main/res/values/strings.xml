@@ -8,6 +8,12 @@
     <string name="title_activity_shido">ShidoActivity</string>
     <string name="shido_world">石洞world</string>
     <string name="juststarting">与你一起努力</string>
+    <string name="city_name">深圳</string>
+    <string name="quarter_name">罗湖</string>
+    <string name="myworld">我的世界</string>
+    <string name="myfavorite">我的收藏</string>
+    <string name="about">关于</string>
+    <string name="deconnect">退出</string>
 
     <string-array name="drawer_item">
         <item>我的世界</item>
